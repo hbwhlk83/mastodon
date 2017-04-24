@@ -222,8 +222,7 @@ class Mastodon extends React.Component {
 
   componentDidMount() {
     const { locale }  = this.props;
-    // const streamingAPIBaseURL = store.getState().getIn(['meta', 'streaming_api_base_url']);
-    const streamingAPIBaseURL = 'mastodon.robotstart.info';
+    const streamingAPIBaseURL = store.getState().getIn(['meta', 'streaming_api_base_url']);
     const accessToken = store.getState().getIn(['meta', 'access_token']);
 
     this.subscription = createStream(streamingAPIBaseURL, accessToken, 'user', {
