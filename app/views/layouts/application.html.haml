@@ -17,11 +17,7 @@
       - if content_for?(:page_title)
         = yield(:page_title)
         = ' - '
-<<<<<<< HEAD
-      Robodon
-=======
-      = title
->>>>>>> upstream/master
+        = title
 
     = stylesheet_link_tag stylesheet_for_layout, media: 'all'
     = csrf_meta_tags
