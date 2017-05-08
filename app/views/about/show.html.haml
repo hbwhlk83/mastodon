@@ -1,5 +1,5 @@
 - content_for :header_tags do
-  = javascript_include_tag 'application_public', integrity: true, crossorigin: 'anonymous'
+  = javascript_pack_tag 'public', integrity: true, crossorigin: 'anonymous'
 
 - content_for :page_title do
   = site_hostname
@@ -10,12 +10,17 @@
   %meta{ property: 'og:type', content: 'website' }/
   %meta{ property: 'og:title', content: site_hostname }/
   %meta{ property: 'og:description', content: strip_tags(@instance_presenter.site_description.presence || t('about.about_mastodon')) }/
+<<<<<<< HEAD
   %meta{ property: 'og:image', content: asset_url('robodon_small.jpg') }/
+=======
+  %meta{ property: 'og:image', content: asset_pack_path('mastodon_small.jpg') }/
+>>>>>>> upstream/master
   %meta{ property: 'og:image:width', content: '400' }/
   %meta{ property: 'og:image:height', content: '400' }/
   %meta{ property: 'twitter:card', content: 'summary' }/
 
 .wrapper
+<<<<<<< HEAD
   %div{style: 'text-align:center;'}
     = image_tag 'lobodon_logo.png', width: 450, style: 'display:block;margin:0 auto 40px;max-width:100%;'
   %p
@@ -35,6 +40,16 @@
 
   .screenshot-with-signup
     .mascot= image_tag 'robosta_robot_white.png'
+=======
+  %h1
+    = image_tag asset_pack_path('logo.png')
+    = Setting.site_title
+
+  %p!= t('about.about_mastodon')
+
+  .screenshot-with-signup
+    .mascot= image_tag asset_pack_path('fluffy-elephant-friend.png')
+>>>>>>> upstream/master
 
     - if @instance_presenter.open_registrations
       = render 'registration'
@@ -43,7 +58,7 @@
         - if @instance_presenter.closed_registrations_message.blank?
           %p= t('about.closed_registrations')
         - else
-          = @instance_presenter.closed_registrations_message.html_safe
+          != @instance_presenter.closed_registrations_message
         .info
           = link_to t('auth.login'), new_user_session_path, class: 'webapp-btn'
           ·
@@ -83,6 +98,7 @@
           = fa_icon('li check-square')
           = t 'about.features.api'
 
+<<<<<<< HEAD
   %h3
     Mastodonとは
 
@@ -90,6 +106,11 @@
 
   %h3{style: 'margin-top:20px; margin-bottom:10px;'}
     運用について
+=======
+  - unless @instance_presenter.site_description.blank?
+    %h3= t('about.description_headline', domain: site_hostname)
+    %p!= @instance_presenter.site_description
+>>>>>>> upstream/master
 
   %p{style: 'margin:0;padding:0;'}
     本インスタンスの運用は、ロボットスタート株式会社が行います。
