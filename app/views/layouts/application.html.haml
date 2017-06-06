@@ -16,7 +16,7 @@
       - if content_for?(:page_title)
         = yield(:page_title)
         = ' - '
-      = title
+        = title
 
     = stylesheet_pack_tag 'common', media: 'all'
     = stylesheet_pack_tag stylesheet_for_layout, media: 'all'

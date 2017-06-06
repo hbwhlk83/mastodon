@@ -16,14 +16,25 @@
   %meta{ property: 'twitter:card', content: 'summary' }/
 
 .wrapper
-  %h1
-    = image_tag asset_pack_path('logo.png')
-    = Setting.site_title
+  %div{style: 'text-align:center;'}
+    = image_tag 'lobodon_logo.png', width: 450, style: 'display:block;margin:0 auto 40px;max-width:100%;'
+  %p
+    ロボット情報WEBマガジン「ロボスタ」が運営するインスタンスです。
+    ロボット、AI、IoT、ドローンなどの話題を中心としていますが、上記に限らず、好きな内容を話していただいて大丈夫です。
 
-  %p!= t('about.about_mastodon')
+  %h3{style: 'margin-top:20px; margin-bottom:10px;'}
+    ルール
+
+  %ul{style: 'margin-bottom:10px;'}
+    %li<>
+      各国の法律及び、日本国内の法律を厳守してください。
+    %li<>
+      公序良俗に反する投稿はおやめください。
+    %li<>
+      AIやBOTによる自動投稿などもOKですが、他人に迷惑がかかったり、サーバーに負荷のかかるご利用方法はおやめください。
 
   .screenshot-with-signup
-    .mascot= image_tag asset_pack_path('fluffy-elephant-friend.png')
+    .mascot= image_tag 'robosta_robot_white.png'
 
     - if @instance_presenter.open_registrations
       = render 'registration'
@@ -72,12 +83,33 @@
           = fa_icon('li check-square')
           = t 'about.features.api'
 
+  %h3
+    Mastodonとは
+
+  %p= t('about.about_mastodon').html_safe
+
+  %h3{style: 'margin-top:20px; margin-bottom:10px;'}
+    運用について
+
   - unless @instance_presenter.site_description.blank?
     %h3= t('about.description_headline', domain: site_hostname)
     %p!= @instance_presenter.site_description
 
-  .actions
-    .info
+  %p{style: 'margin:0;padding:0;'}
+    本インスタンスの運用は、ロボットスタート株式会社が行います。
+    データーの保証や継続しての運営をお約束するものではありませんので予めご了承ください。
+
+  %h3{style: 'margin-top:20px; margin-bottom:10px;'}
+    お問い合わせ
+
+  %p{style: 'margin:0;padding:0;'}
+    info@robotstart.co.jp宛に、メールにてお問い合わせください。
+
+  %p{style: 'margin:0;margin-bottom:20px;padding:0;font-size:.9em;'}
+    ※返信をお約束するものではありません。ご了承ください。
+
+  .actions{style: 'text-align:center;'}
+    .info{style: 'text-align:center; display:inline; float:none;'}
       = link_to t('about.terms'), terms_path
       ·
       = link_to t('about.apps'), 'https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/Apps.md'
@@ -85,3 +117,7 @@
       = link_to t('about.source_code'), 'https://github.com/tootsuite/mastodon'
       ·
       = link_to t('about.other_instances'), 'https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/List-of-Mastodon-instances.md'
+
+  %div{style: 'text-align:center; margin-top:14px;'}
+    %a{ href: "https://robotstart.info/", title: "ロボット情報WEBマガジン - ロボスタ" }
+      = image_tag 'robosta_logo.svg', width: '100px'
