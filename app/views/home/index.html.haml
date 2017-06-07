@@ -1,3 +1,7 @@
+- content_for :page_title do
+  -# = site_hostname
+  ホーム
+  
 - content_for :header_tags do
   %script#initial-state{ type: 'application/json' }!= json_escape(render(file: 'home/initial_state', formats: :json))
 
