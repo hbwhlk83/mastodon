@@ -40,7 +40,7 @@
         "id": "column_back_button.label"
       }
     ],
-    "path": "app/javascript/mastodon/components/column_back_button.json"
+    "path": "app/javascript/mastodon/components/column_back_button_slim.json"
   },
   {
     "descriptors": [
@@ -49,7 +49,7 @@
         "id": "column_back_button.label"
       }
     ],
-    "path": "app/javascript/mastodon/components/column_back_button_slim.json"
+    "path": "app/javascript/mastodon/components/column_back_button.json"
   },
   {
     "descriptors": [
@@ -98,15 +98,6 @@
       }
     ],
     "path": "app/javascript/mastodon/components/missing_indicator.json"
-  },
-  {
-    "descriptors": [
-      {
-        "defaultMessage": "{name} boosted",
-        "id": "status.reblogged_by"
-      }
-    ],
-    "path": "app/javascript/mastodon/components/status.json"
   },
   {
     "descriptors": [
@@ -181,6 +172,15 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "{name} boosted",
+        "id": "status.reblogged_by"
+      }
+    ],
+    "path": "app/javascript/mastodon/components/status.json"
+  },
+  {
+    "descriptors": [
+      {
         "defaultMessage": "Toggle sound",
         "id": "video_player.toggle_sound"
       },
@@ -239,6 +239,44 @@
       }
     ],
     "path": "app/javascript/mastodon/containers/status_container.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Media",
+        "id": "account.media"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/account_gallery/index.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Block",
+        "id": "confirmations.block.confirm"
+      },
+      {
+        "defaultMessage": "Mute",
+        "id": "confirmations.mute.confirm"
+      },
+      {
+        "defaultMessage": "Hide entire domain",
+        "id": "confirmations.domain_block.confirm"
+      },
+      {
+        "defaultMessage": "Are you sure you want to block {name}?",
+        "id": "confirmations.block.message"
+      },
+      {
+        "defaultMessage": "Are you sure you want to mute {name}?",
+        "id": "confirmations.mute.message"
+      },
+      {
+        "defaultMessage": "Are you really, really sure you want to block the entire {domain}? In most cases a few targeted blocks or mutes are sufficient and preferable.",
+        "id": "confirmations.domain_block.message"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/account_timeline/containers/header_container.json"
   },
   {
     "descriptors": [
@@ -329,44 +367,6 @@
       }
     ],
     "path": "app/javascript/mastodon/features/account/components/header.json"
-  },
-  {
-    "descriptors": [
-      {
-        "defaultMessage": "Media",
-        "id": "account.media"
-      }
-    ],
-    "path": "app/javascript/mastodon/features/account_gallery/index.json"
-  },
-  {
-    "descriptors": [
-      {
-        "defaultMessage": "Block",
-        "id": "confirmations.block.confirm"
-      },
-      {
-        "defaultMessage": "Mute",
-        "id": "confirmations.mute.confirm"
-      },
-      {
-        "defaultMessage": "Hide entire domain",
-        "id": "confirmations.domain_block.confirm"
-      },
-      {
-        "defaultMessage": "Are you sure you want to block {name}?",
-        "id": "confirmations.block.message"
-      },
-      {
-        "defaultMessage": "Are you sure you want to mute {name}?",
-        "id": "confirmations.mute.message"
-      },
-      {
-        "defaultMessage": "Are you really, really sure you want to block the entire {domain}? In most cases a few targeted blocks or mutes are sufficient and preferable.",
-        "id": "confirmations.domain_block.message"
-      }
-    ],
-    "path": "app/javascript/mastodon/features/account_timeline/containers/header_container.json"
   },
   {
     "descriptors": [
@@ -518,20 +518,20 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Search",
-        "id": "search.placeholder"
-      }
-    ],
-    "path": "app/javascript/mastodon/features/compose/components/search.json"
-  },
-  {
-    "descriptors": [
-      {
         "defaultMessage": "{count, number} {count, plural, one {result} other {results}}",
         "id": "search_results.total"
       }
     ],
     "path": "app/javascript/mastodon/features/compose/components/search_results.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Search",
+        "id": "search.placeholder"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/compose/components/search.json"
   },
   {
     "descriptors": [
